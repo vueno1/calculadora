@@ -1,0 +1,83 @@
+*{ 
+    font-family: 'Fraunces', serif;
+    color: #fff;
+    /* el "*" es para toda la pagina */
+}
+
+body {
+    margin: 0;
+    background-color: #224870;
+}
+
+.container {
+    display: flex;
+    justify-content: center; /*lo centra en eje vertical (principal)*/
+    align-items: center; /*lo centra en el eje horizontal (cruzado)*/
+    height: 100vh; /*100 q es el total de la altura*/
+}
+
+.calculadora {
+    display: grid;
+    grid-template-columns: repeat(4, 75px); /*4 columnas y c/u tiene 75px de largo*/
+    grid-template-rows: 160px repeat(5, 75px); /*160px alto del display (pantallita) + 5 columnas de 75 alto */
+    background-color: #00916e;
+    padding: 15px;
+    border-radius: 32px;
+    box-shadow: 15px 10px 0px 5px #00000033; /* el 33 es la opacidad*/
+    /*15px sobre el eje vertical (x), 10px sobre el eje horizontal (y), 0px blur y 5px de tamaño sombra*/
+}
+
+button {
+    cursor: pointer; /* esto reemplaza el puntero x default y lo reemplaza x la manito*/
+    margin: 5px; /*distancia entre botones*/
+    padding: 0;
+    border-radius: 32px; /*redondea los botones*/
+    font-size: 1.5em; /*tamaño de los numero y operadores*/
+    border: none; /*le saca los bordes de mas*/
+    background-color: #00916e;
+    box-shadow: 5px 5px 10px -3px #00000040, -5px -5px 15px 3px #00ffc11f ;
+    /* primer argumento = la sombra de atras*/
+    /* segundo argumento = la sombra de adelante*/
+}
+
+button:active {
+    background-color: #006f54;
+    /*esto cambia el color a oscuro cada vez que aprieto boton*/
+}
+
+/*
+button:focus {
+    outline: none;
+
+}
+*/
+
+.col-2 {
+    grid-column: span 2;
+    /*esto hace q C y 0 sean botones mas anchos*/
+}
+
+.display {
+    grid-column: 1 / -1; /*de ancho, va de 1 a -1*/
+    padding: 16px;
+    display: flex;
+    margin: 10px 10px 20px; /*10px arriba, 10px costados, y 20pax abajo*/
+    flex-direction: column; /*los numeros adentro del display van a ir en columna*/
+    align-items: flex-end; /*los numeros van a ir dirigidos a la derecha*/
+    background-color: #363636;
+    border-radius: 32px;
+    text-align: right;
+    justify-content: space-between;
+    word-break: break-all; /*?????*/
+    box-shadow: 0px 0px 0px 10px #00000033;
+}
+
+#valor-actual {
+    font-size: 1.5em;
+
+}
+
+#valor-anterior {
+    font-size: 2em;
+}
+
